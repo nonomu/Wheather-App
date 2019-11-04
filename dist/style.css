@@ -1,0 +1,19 @@
+body{
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    height: 100vh;
+    background-color: lightblue;
+}
+button{
+    width: 15vw;
+}
+input{
+    width: 330px;
+    height: 10px;
+    padding: 10px 5px;
+    float: left;    
+    font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+    border-radius: 3px; 
+}
