@@ -1,20 +1,18 @@
 const render = new Renderer()
+const temp = new TempManager()
 
 
-const newCity = {
-    name: "Israel",
-    temperature: "23",
-    condition: "Sunny",
-    conditionPic: "lovely"
+
+
+const loadPage  = async function () {
+    const allCityData = temp.getDataFromDB()
+    render.renderData(allCityData)
 }
-
-// const fetchWheatherData = function () {
-//     let input = $("#WheatherCityName").val()
-//     $.get(`/city/${input}`, function (CityWeather) {
-//         console.log(CityWeather)
-//         // render.render(TeamData)
-//     })
-// }
-
-
+// loadPage()
+ 
+const handleSearch = async function () {
+    const CityName = $("#WheatherCityName").val()
+    const cityData =  temp.getCityData(CityName)
+    //Why needed to be async?
+}
 

@@ -31,7 +31,7 @@ router.get('/cities', async function (req, res) {
 router.post('/city', async function (req, res) {
     const newCity =new WheatherDB(req.body)
     newCity.save()
-      res.send("Saved")
+    res.send("Saved")
 })
 router.delete('/city/:cityName', async function (req, res) {
     const cityName =req.params.cityName
