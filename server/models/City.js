@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const ExpenseSchema = new Schema({
+const WeatherSchema = new Schema({
     name: String ,
-    amount: Number,
-    date: Date,
-    group:String
+    temperature: Number,
+    condition:String,
+    conditionPic: String
 })
 
-const Expense = mongoose.model("Expense", ExpenseSchema)
-module.exports = Expense
+const Weather = mongoose.model("Wheather", WeatherSchema)
+module.exports = Weather
