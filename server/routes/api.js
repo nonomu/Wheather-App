@@ -15,7 +15,7 @@ const WheatherAPIbasicURL = "https://api.openweathermap.org/data/2.5/weather"
 router.get('/city/:cityName', async function (req, res) {
     const cityName = req.params.cityName
     try {
-        const weatherData = await await requestPromise(`${WheatherAPIbasicURL}?q=${cityName}&units=metric&APPID=${APPID}`)
+        const weatherData =  await requestPromise(`${WheatherAPIbasicURL}?q=${cityName}&units=metric&APPID=${APPID}`)
         res.send(JSON.parse(weatherData))
     }
     catch (err) {

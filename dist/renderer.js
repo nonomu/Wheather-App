@@ -7,7 +7,7 @@ class Renderer {
         let newHTML = template({ players })
         $('.wheather-container').empty().append(newHTML)
     }
-    render(players) {
+    renderData(allCityData) {
        this._renderPlayers(players)
     }
 }
