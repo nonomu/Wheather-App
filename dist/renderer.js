@@ -10,8 +10,7 @@ class Renderer {
        
     }
     renderData(allCityData) {
-        allCityData.forEach(c => {c.temperature = Math.round(c.temperature)
-        });
+        allCityData.forEach(c => {c.temperature = Math.round(c.temperature)});
        this._renderWheather(allCityData)
     }
 }

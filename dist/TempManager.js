@@ -37,7 +37,7 @@ class TempManager {
                 console.log(result)
             }
         })
-        let index = this.cityData.indexOf(cityName);
+        let index = this.cityData.map(c=> c.name).indexOf(cityName);
         this.cityData.splice(index,1)
     }
 

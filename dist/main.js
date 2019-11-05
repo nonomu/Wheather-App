@@ -20,14 +20,15 @@ const handleSearch = async function () {
 
 $(".weather-container").on("click", ".fa-plus", function () {
     const CityName = $(this).closest(".City").find(".city-info").find(".city-name")[0].innerHTML
+    console.log($(this).closest(".City").find(".city-info").find(".city-name")[0].innerHTML);
     temp.saveCity(CityName)
-    console.log($(this));
     $(this)[0].className = "fas fa-trash"
 })
 $(".weather-container").on("click", ".fa-trash", function () {
     const CityName = $(this).closest(".City").find(".city-info").find(".city-name")[0].innerHTML
+    console.log(CityName)
     temp.removeCity(CityName)
-    $(this).animate({ opacity: '0' });
+    $(this).animate({ opacity: '0' },500)
     render.renderData(temp.cityData)
 })
 
