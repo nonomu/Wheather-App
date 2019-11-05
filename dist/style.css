@@ -1,19 +1,92 @@
+
 body{
     display: grid;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 1fr 6fr;
     height: 100vh;
-    background-color: lightblue;
+     background-color: #00BFFF; 
 }
 button{
     width: 15vw;
 }
-input{
-    width: 330px;
-    height: 10px;
+
+#weather-container{
+    display: grid;
+    grid-template-rows: repeat(auto-fill,minmax(400px,1fr));
+
+}
+#input-container{
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    justify-self: center;
+    align-self: center;
+}
+.fixed {position:fixed; top:0; left:30px;}
+
+#WheatherCityName{
+    width: 80vw;
+    height: 10vh;
     padding: 10px 5px;
     float: left;    
-    font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font: bold 60px 'lucida sans', 'trebuchet MS', 'Tahoma';
     border: 1px solid #ccc;
     box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
     border-radius: 3px; 
+}
+
+.fa-search{
+    display: grid;
+    font-size: 30vw;
+}
+
+.City{
+    height: 15vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr;
+    border: 1px solid #000;
+	grid-gap: 1px;
+    border-color: white;
+}
+.weather-info{
+    position: relative;
+    justify-self: center;
+    align-self: center;
+}
+.city-info{
+    position: relative;
+    justify-self: center;
+    align-self: center;
+}
+.city-temperature{
+    font-size: 50px;
+    top: 0px;
+    content: "\00b0"
+}
+.city-name{
+    font-size: 50px;
+    bottom: 5px;
+}
+.city-condition{
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: 40px;
+}
+img{
+    width: 200px;
+    height: 200px;
+  height: auto;
+  justify-self: center;
+  align-self: center;
+  vertical-align: middle;
+}
+.fas{
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+}
+.fa-search{
+    display: grid;
+    font-size: 10vw;
+    top: 30px;   
 }

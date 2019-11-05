@@ -4,15 +4,38 @@ const temp = new TempManager()
 
 
 
-const loadPage  = async function () {
-    const allCityData = temp.getDataFromDB()
-    render.renderData(allCityData)
+const loadPage = async function () {
+    await temp.getDataFromDB()
+    render.renderData(temp.cityData)
 }
-// loadPage()
- 
+loadPage()
+
+
 const handleSearch = async function () {
     const CityName = $("#WheatherCityName").val()
-    const cityData =  temp.getCityData(CityName)
-    //Why needed to be async?
+    const cityData = await temp.getCityData(CityName)
+    render.renderData(temp.cityData)
+    $("#WheatherCityName").val("")
 }
+
+$(".weather-container").on("click", ".fa-plus", function () {
+    const CityName = $(this).closest(".City").find(".city-info").find(".city-name")[0].innerHTML
+    temp.saveCity(CityName)
+    console.log($(this));
+    $(this)[0].className = "fas fa-trash"
+})
+$(".weather-container").on("click", ".fa-trash", function () {
+    const CityName = $(this).closest(".City").find(".city-info").find(".city-name")[0].innerHTML
+    temp.removeCity(CityName)
+    $(this).animate({ opacity: '0' });
+    render.renderData(temp.cityData)
+})
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('#input-container').addClass('fixed');
+    } else {
+        $('#input-container').removeClass('fixed');
+    }
+});
 

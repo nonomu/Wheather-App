@@ -19,56 +19,28 @@ router.get('/city/:cityName', async function (req, res) {
         res.send(JSON.parse(weatherData))
     }
     catch (err) {
-        res.send(`city not found`)
+         res.status(400)
+        res.send(err.message)
+        
     }
 
 })
 router.get('/cities', async function (req, res) {
       const allCities=await WheatherDB.find({})
-        res.send(allCities)
+     res.send(allCities)
 })
 
-router.post('/city', async function (req, res) {
-    const newCity =new WheatherDB(req.body)
+router.post('/city', function (req, res) {
+    const newCity =new WheatherDB({...req.body})
     newCity.save()
     res.send("Saved")
+    
 })
 router.delete('/city/:cityName', async function (req, res) {
     const cityName =req.params.cityName
     await WheatherDB.deleteOne({name:cityName})
     res.send("deleted")
 })
-// router.post('/new', function (req, res) {
-
-//     let PostObj = {
-//         name: req.body.name,
-//         amount: req.body.amount,
-//         date: (req.body.date) ? moment(req.body.date).format("LLLL") : moment(new Date()).format("LLLL"),
-//         group: req.body.group
-//     }
-//     const newExpense = new Expense(PostObj)
-//     newExpense.save().then(function () {
-//         Expense.count({}).exec(function (err, count) {
-//             console.log("We have a " + count + " EXpenses");
-//         })
-//     })
-//     res.end()
-// })
-
-// router.put('/update', function (req, res) {
-//     Expense.findOneAndUpdate
-//         (
-//             { group: `${req.body.group1}` },
-//             { $set: { group: `${req.body.group2}` } },
-//             { new: true }
-//         )
-//         .exec(function (err, expense) {
-//             res.send(expense._id + " changed to " + expense.group);
-//         })
-
-// })
-// router.get('/expenses/:group', function (req, res) {
-// }
 
 
 

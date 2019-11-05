@@ -7,6 +7,7 @@ class TempManager {
         const cities = await $.get(`/cities/`)
         this.cityData = cities
         console.log(cities);
+        return cities
         
     }
     async getCityData(cityName) {
@@ -18,13 +19,13 @@ class TempManager {
         
     }
     async saveCity(cityName) {
-        const saveCity = this.cityData.find(c => c.name = cityName) 
-        if(saveCity)
-        {
+        const saveCity = this.cityData.find(c => c.name === cityName) 
+        delete saveCity._id 
+        try{
         await $.post(`/city`, saveCity)
         console.log("Saved (Maybe :)")
         }
-        else{
+        catch(e){
             console.log("Not exist");
         }
     }

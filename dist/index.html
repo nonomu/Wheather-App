@@ -6,34 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Totally Real Site</title>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="../handlebars/dist/handlebars.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body>
-        <!-- <script id="wheather-template" type="text/x-handlebars-template">
+    <script id="wheather-template" type="text/x-handlebars-template">
 
-            {{#each players}}
-            <div class="player">
-                <p class="player-info">{{firstName}} {{lastName}} {{jersey}} </p>
-                <img class="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" alt="Not Found" onerror=this.src="undefined.jpg">
-                <p class="player-info">{{pos}}  </p>
+            {{#each allCityData}}
+            <div  class="City">
+                <div class="fas">
+                    {{#if _id}}
+                    <i class="fas fa-trash"></i>
+                    {{else}}
+                    <i class="fas fa-plus"></i>
+                     {{/if}}
+                </div>
+             <div class="city-info">
+                <span class="city-temperature">{{temperature}}&#176; </span> <br>
+                <span class="city-name">{{name}}</span>
+              
+            </div> 
+            <div class="weather-info">
+                <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png"> <br>
+                <span class="city-condition">{{condition}}</span>
+            </div>
+               
             </div>
             {{/each}}
          </script>
+
     <div id="input-container">
-        <div><input type="text" id="teamNameInput" placeholder="What's the Team Name?">
-        <i onclick=fetchTeamData() class="fas fa-search"></i>
-        <i onclick=addTeamData() class="fas fa-plus"></i>
-         </div>
+        <div>
+            <input id="WheatherCityName" type="text" placeholder="Enter City Name">
+        </div>
+        <div>
+            <i onclick="handleSearch()" class="fas fa-search"></i>
+        </div>
+        <!-- <i onclick=fetchTeamData() class="fas fa-search"></i>
+            <i onclick=addTeamData() class="fas fa-plus"></i> -->
     </div>
-    <div class="players-container">
+   
+    <div class="weather-container">
+                <!-- Dom rules -->
+    </div>
 
-    </div> -->
-
-    <input id="WheatherCityName" type="text" placeholder="Enter City Name">
-    <button onclick="fetchWheatherData()">hello</button>
-    <button onclick="deleteWheatherData()">Delete</button>
     <script src="../jquery/dist/jquery.js"></script>
     <script src="TempManager.js"></script>
     <script src="renderer.js"></script>
