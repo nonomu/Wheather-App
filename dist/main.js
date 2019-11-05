@@ -38,4 +38,3 @@ $(window).scroll(function () {
         $('#input-container').removeClass('fixed');
     }
 });
-
