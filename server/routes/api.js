@@ -9,9 +9,6 @@ const WheatherDB = require("../models/City")
 const APPID = "693487d5ce7f67db0872c3ce4dbe3b15"
 const WheatherAPIbasicURL = "https://api.openweathermap.org/data/2.5/weather"
 
-// const data = new WheatherDB({name:"Noam", temperature :23, condition: "hot", conditionPic:"nana"})
-// data.save()
-
 router.get('/city/:cityName', async function (req, res) {
     const cityName = req.params.cityName
     try {

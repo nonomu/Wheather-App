@@ -5,13 +5,14 @@ class Renderer {
         let template = Handlebars.compile(source)
         let newHTML = template({ allCityData })
         $('.weather-container').empty().append(newHTML)
-        $('.City:last').toggle();
-        $('.City:last').toggle("slide:right");
+        $('.City:last').toggle()
+        $('.City:last').toggle("slide:right").delay(1500);
+
        
     }
     renderData(allCityData) {
         allCityData.forEach(c => {c.temperature = Math.round(c.temperature)});
-       this._renderWheather(allCityData)
+        this._renderWheather(allCityData)
     }
 }
 

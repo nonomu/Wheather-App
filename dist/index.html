@@ -20,7 +20,9 @@
                     {{#if _id}}
                     <i class="fas fa-trash"></i>
                     {{else}}
+                    <i class="fas fa-trash"></i>
                     <i class="fas fa-plus"></i>
+                    <i class="fas fa-sync"></i>
                      {{/if}}
                 </div>
              <div class="city-info">
@@ -41,7 +43,7 @@
 
     <div id="input-container">
         <div>
-            <input id="WheatherCityName" type="text" placeholder="Enter City Name">
+            <input id="CityInput" placeholder="Enter City Name" >
         </div>
         <div>
             <i onclick="handleSearch()" class="fas fa-search"></i>
@@ -53,7 +55,6 @@
     <div class="weather-container">
                 <!-- Dom rules -->
     </div>
-
     <script src="../jquery/dist/jquery.js"></script>
     <script src="TempManager.js"></script>
     <script src="renderer.js"></script>
