@@ -6,7 +6,7 @@ const moment = require('moment')
 const requestPromise = require("request-promise")
 const WheatherDB = require("../models/City")
 
-const APPID = "693487d5ce7f67db0872c3ce4dbe3b15"
+const APPID = "" //youre api key here
 const WheatherAPIbasicURL = "https://api.openweathermap.org/data/2.5/weather"
 
 router.get('/city/:cityName', async function (req, res) {
